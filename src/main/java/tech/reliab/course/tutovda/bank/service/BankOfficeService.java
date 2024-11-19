@@ -9,7 +9,6 @@ import java.util.List;
 public interface BankOfficeService {
     BankOffice create(BankOffice bankOffice);
 
-<<<<<<< HEAD
     BankOffice getBankOfficeById(Long id);
 
     List<BankOffice> getAllBankOffices();
@@ -27,23 +26,4 @@ public interface BankOfficeService {
     boolean addEmployee(Long id, Employee employee);
 
     boolean removeEmployee(BankOffice bankOffice, Employee employee);
-=======
-    BankOffice getBankOfficeById(int id);
-
-    List<BankOffice> getAllBankOffices();
-
-    List<Employee> getAllEmployeesByOfficeId(int id);
-
-    boolean installAtm(int id, BankAtm bankAtm);
-
-    boolean removeAtm(int id, BankAtm bankAtm);
-
-    boolean inputMoney(int id, int money);
-
-    boolean outputMoney(int id, int money);
-
-    boolean addEmployee(int id, Employee employee);
-
-    boolean removeEmployee(int id, Employee employee);
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
 }

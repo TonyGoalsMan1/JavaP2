@@ -1,9 +1,6 @@
 package tech.reliab.course.tutovda.bank.entity;
 
-<<<<<<< HEAD
 import jakarta.persistence.*;
-=======
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
 import lombok.*;
 import tech.reliab.course.tutovda.bank.service.BankOfficeService;
 
@@ -12,7 +9,6 @@ import tech.reliab.course.tutovda.bank.service.BankOfficeService;
 @Setter
 @AllArgsConstructor
 @ToString(includeFieldNames = true)
-<<<<<<< HEAD
 @Entity
 public class BankOffice {
     @Id
@@ -22,14 +18,6 @@ public class BankOffice {
     private String name = "-";
     private String address = "-";
     @ManyToOne
-=======
-public class BankOffice {
-    private static int counterId;
-
-    private int id = 0;
-    private String name = "-";
-    private String address = "-";
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
     private Bank bank = null;
     private boolean isWorking = false;
     private boolean isAtmPlaceable = false;
@@ -40,23 +28,9 @@ public class BankOffice {
     private long totalMoney = 0;
     private int rentPrice = 0;
 
-<<<<<<< HEAD
     public BankOffice() {}
 
     public BankOffice(String name, String address) {
-=======
-    // special initialization with incrementing global counter
-    private void initId() {
-        id = counterId++;
-    }
-
-    public BankOffice() {
-        initId();
-    }
-
-    public BankOffice(String name, String address) {
-        initId();
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
         this.name = name;
         this.address = address;
     }
@@ -64,10 +38,6 @@ public class BankOffice {
     public BankOffice(String name, String address, Bank bank, boolean isWorking, boolean isAtmPlaceable,
                       int atmsAmount, boolean isCreditAvailable, boolean isCashOutputAvailable,
                       boolean isCashInputAvailable, long totalMoney, int rentPrice) {
-<<<<<<< HEAD
-=======
-        initId();
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
         this.name = name;
         this.address = address;
         this.bank = bank;

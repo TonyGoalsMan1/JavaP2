@@ -29,14 +29,12 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         BankService bankService = new BankServiceImpl();
-        BankOfficeService bankOfficeService = new BankOfficeServiceImpl(bankService);
-        bankService.setBankOfficeService(bankOfficeService);
-        EmployeeService employeeService = new EmployeeServiceImpl(bankOfficeService);
-        BankAtmService bankAtmService = new BankAtmServiceImpl(bankOfficeService);
-        UserService userService = new UserServiceImpl(bankService);
-        bankService.setUserService(userService);
-        PaymentAccountService paymentAccountService = new PaymentAccountServiceImpl(userService);
-        CreditAccountService creditAccountService = new CreditAccountServiceImpl(userService);
+        BankOfficeService bankOfficeService = new BankOfficeServiceImpl();
+        EmployeeService employeeService = new EmployeeServiceImpl();
+        BankAtmService bankAtmService = new BankAtmServiceImpl();
+        UserService userService = new UserServiceImpl();
+        PaymentAccountService paymentAccountService = new PaymentAccountServiceImpl();
+        CreditAccountService creditAccountService = new CreditAccountServiceImpl();
 
         for (int i = 1; i < 6; i++) {
             String name = "Blatnoy Bank #" + i;

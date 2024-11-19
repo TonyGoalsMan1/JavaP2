@@ -9,13 +9,9 @@ public interface BankAtmService {
     // create bank
     BankAtm create(BankAtm bankAtm);
 
-<<<<<<< HEAD
     void delete(Long id);
 
     BankAtm getBankAtmById(Long id);
-=======
-    BankAtm getBankAtmById(int id);
->>>>>>> 0fefca05a9a17df98f8e18047ed1b5ec4914e424
 
     List<BankAtm> getAllBankAtms();
 
