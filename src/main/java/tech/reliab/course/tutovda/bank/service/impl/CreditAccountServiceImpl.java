@@ -14,8 +14,11 @@ import java.util.Map;
 
 @Service
 public class CreditAccountServiceImpl implements CreditAccountService {
-    @Autowired
-    private CreditAccountRepository creditAccountRepository;
+    private final CreditAccountRepository creditAccountRepository;
+
+    public CreditAccountServiceImpl(CreditAccountRepository creditAccountRepository) {
+        this.creditAccountRepository = creditAccountRepository;
+    }
 
     public CreditAccount create(CreditAccount creditAccount) {
         if (creditAccount == null) {

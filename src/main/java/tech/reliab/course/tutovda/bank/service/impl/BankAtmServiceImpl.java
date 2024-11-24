@@ -14,8 +14,11 @@ import java.util.List;
 import java.util.Map;
 
 public class BankAtmServiceImpl implements BankAtmService {
-    @Autowired
-    private BankAtmRepository bankAtmRepository;
+    private final BankAtmRepository bankAtmRepository;
+
+    public BankAtmServiceImpl(BankAtmRepository bankAtmRepository) {
+        this.bankAtmRepository = bankAtmRepository;
+    }
 
     public BankAtm create(BankAtm bankAtm) {
         return bankAtmRepository.save(bankAtm);

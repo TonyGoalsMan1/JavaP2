@@ -16,12 +16,16 @@ import java.util.*;
 
 @Service
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private CreditAccountRepository creditAccountRepository;
-    @Autowired
-    private PaymentAccountRepository paymentAccountRepository;
+    private final UserRepository userRepository;
+    private final CreditAccountRepository creditAccountRepository;
+    private final PaymentAccountRepository paymentAccountRepository;
+
+    public UserServiceImpl(UserRepository userRepository, CreditAccountRepository creditAccountRepository,
+                           PaymentAccountRepository paymentAccountRepository) {
+        this.userRepository = userRepository;
+        this.creditAccountRepository = creditAccountRepository;
+        this.paymentAccountRepository = paymentAccountRepository;
+    }
 
     public User create(User user) {
         if (user == null) {

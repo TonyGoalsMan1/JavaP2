@@ -18,12 +18,17 @@ import java.util.Map;
 
 @Service
 public class BankOfficeServiceImpl implements BankOfficeService {
-    @Autowired
-    private BankOfficeRepository bankOfficeRepository;
-    @Autowired
-    private EmployeeRepository employeeRepository;
-    @Autowired
-    private BankAtmRepository bankAtmRepository;
+    private final BankOfficeRepository bankOfficeRepository;
+    private final EmployeeRepository employeeRepository;
+    private final BankAtmRepository bankAtmRepository;
+
+    public BankOfficeServiceImpl(BankOfficeRepository bankOfficeRepository,
+                                 EmployeeRepository employeeRepository,
+                                 BankAtmRepository bankAtmRepository) {
+        this.bankOfficeRepository = bankOfficeRepository;
+        this.employeeRepository = employeeRepository;
+        this.bankAtmRepository = bankAtmRepository;
+    }
 
     public BankOffice create(BankOffice bankOffice) {
         if (bankOffice == null) {

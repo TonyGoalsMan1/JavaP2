@@ -14,8 +14,11 @@ import java.util.Map;
 
 @Service
 public class PaymentAccountServiceImpl implements PaymentAccountService {
-    @Autowired
-    private PaymentAccountRepository paymentAccountRepository;
+    private final PaymentAccountRepository paymentAccountRepository;
+
+    public PaymentAccountServiceImpl(PaymentAccountRepository paymentAccountRepository) {
+        this.paymentAccountRepository = paymentAccountRepository;
+    }
 
     public PaymentAccount create(PaymentAccount paymentAccount) {
         if (paymentAccount == null) {

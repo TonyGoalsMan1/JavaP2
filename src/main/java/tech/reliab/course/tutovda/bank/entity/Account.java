@@ -13,9 +13,11 @@ public abstract class Account {
     @Setter(AccessLevel.NONE)
     protected Long id;
     @ManyToOne
-    protected User user = null;
+    protected User user;
     @ManyToOne
-    protected Bank bank = null;
+    protected Bank bank;
+
+    public Account() {}
 
     public Account(User user, Bank bank) {
         this.user = user;

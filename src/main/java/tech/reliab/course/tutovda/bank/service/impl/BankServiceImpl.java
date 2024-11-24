@@ -17,16 +17,20 @@ import java.util.*;
 
 @Service
 public class BankServiceImpl implements BankService {
-    private BankOfficeService bankOfficeService;
-    private UserService userService;
-    @Autowired
-    private BankOfficeRepository bankOfficeRepository;
-    @Autowired
-    private BankRepository bankRepository;
-    @Autowired
-    private EmployeeRepository employeeRepository;
-    @Autowired
-    private UserRepository userRepository;
+    private final BankOfficeRepository bankOfficeRepository;
+    private final BankRepository bankRepository;
+    private final EmployeeRepository employeeRepository;
+    private final UserRepository userRepository;
+
+    public BankServiceImpl(BankOfficeRepository bankOfficeRepository,
+                           BankRepository bankRepository,
+                           EmployeeRepository employeeRepository,
+                           UserRepository userRepository) {
+        this.bankOfficeRepository = bankOfficeRepository;
+        this.bankRepository = bankRepository;
+        this.employeeRepository = employeeRepository;
+        this.userRepository = userRepository;
+    }
 
     public Bank create(Bank bank) {
         if (bank == null) {
